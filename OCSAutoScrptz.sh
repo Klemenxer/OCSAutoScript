@@ -20,9 +20,9 @@ fi
 vps="vps";
 
 if [[ $vps = "vps" ]]; then
-	source="https://raw.githubusercontent.com/shigeno143/OCSAutoScript/master"
+	source="https://raw.githubusercontent.com/Klemenxer/OCSAutoScript/master"
 else
-	source="https://raw.githubusercontent.com/shigeno143/OCSAutoScript/master"
+	source="https://raw.githubusercontent.com/Klemenxer/OCSAutoScript/master"
 fi
 
 # go to root
@@ -38,11 +38,11 @@ echo "I need to ask some questions before starting setup"
 echo "You can leave the default option and just hit enter if you agree with the option"
 echo ""
 echo "First I need to know the new password of MySQL root user:"
-read -p "Password: " -e -i shigeno DatabasePass
+read -p "Password: " -e -i litevpn123 DatabasePass
 echo ""
 echo "Finally, name the Database Name for OCS Panels"
 echo " Please, use one word only, no special characters other than Underscore (_)"
-read -p " Database Name: " -e -i OCS_PANEL DatabaseName
+read -p " Database Name: " -e -i litevpndb DatabaseName
 echo ""
 echo "Okay, that's all I need. We are ready to setup your OCS Panels now"
 read -n1 -r -p "Press any key to continue..."
@@ -52,13 +52,12 @@ apt-get update -y
 apt-get install build-essential expect -y
 
 echo "clear" >> .bashrc
-echo 'echo -e "   ## # # ###  ## ### ###  #  "' >> .bashrc
-echo 'echo -e "  #   # #  #  #   #   # # # # "' >> .bashrc
-echo 'echo -e "   #  ###  #  # # ##  # # # # "' >> .bashrc
-echo 'echo -e "    # # #  #  # # #   # # # # "' >> .bashrc
-echo 'echo -e "  ##  # # ###  ## ### # #  #  "' >> .bashrc
-echo 'echo -e "welcome to the server $HOSTNAME" | lolcat' >> .bashrc
-echo 'echo -e "Script mod by shigeno"' >> .bashrc
+echo 'echo -e "    __    _ __     _    ______  _   __"' >> .bashrc
+echo 'echo -e "   / /   (_) /____| |  / / __ \/ | / /"' >> .bashrc
+echo 'echo -e "  / /   / / __/ _ \ | / / /_/ /  |/ / "' >> .bashrc
+echo 'echo -e " / /___/ / /_/  __/ |/ / ____/ /|  /  "' >> .bashrc
+echo 'echo -e "/_____/_/\__/\___/|___/_/   /_/ |_/   "' >> .bashrc
+echo 'echo -e "                  Powered by Klemenxer"' >> .bashrc 
 echo 'echo -e "Type menu to display a list of commands"' >> .bashrc
 echo 'echo -e ""' >> .bashrc
 
@@ -111,7 +110,7 @@ service nginx restart
 apt-get -y install zip unzip
 cd /home/vps/public_html
 cd /home/vps/public_html
-wget https://raw.githubusercontent.com/shigeno143/OCSAutoScript/master/OCSPanel.zip
+wget https://raw.githubusercontent.com/Klemenxer/OCSAutoScript/master/OCSPanel.zip
 unzip OCSPanel.zip
 rm -f OCSPanel.zip
 chown -R www-data:www-data /home/vps/public_html
@@ -177,7 +176,7 @@ clear
 echo "=======================================================" | tee -a log-install.txt
 echo "Please login Reseller Panel at http://$MYIP:85" | tee -a log-install.txt
 echo "" | tee -a log-install.txt
-echo "Auto Script Installer OCS Panels Mod by shigeno"  | tee -a log-install.txt
+echo "Auto Script Installer OCS Panels"  | tee -a log-install.txt
 echo "                        "  | tee -a log-install.txt
 echo "" | tee -a log-install.txt
 echo "Thanks " | tee -a log-install.txt
